@@ -1,1 +1,14 @@
-<p>skills works!</p>
+<section class="skills" id="skills">
+  <div class="skills-container">
+    <h2 class="skills-title">Skills & Technologien</h2>
+    <p class="skills-subtitle">Technologien und Tools, mit denen ich arbeite</p>
+    <div class="skills-grid">
+      @for (skill of skills; track skill.name) {
+        <div class="skill-card">
+          <img [src]="skill.icon" [alt]="skill.name" class="skill-icon" />
+          <span class="skill-name">{{ skill.name }}</span>
+        </div>
+      }
+    </div>
+  </div>
+</section>
