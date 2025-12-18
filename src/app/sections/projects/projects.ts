@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, AfterViewInit, ElementRef, ViewChild, PLATFORM_ID, Inject } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-projects',
@@ -6,7 +7,23 @@ import { Component } from '@angular/core';
   templateUrl: './projects.html',
   styleUrl: './projects.scss',
 })
-export class Projects {
+export class Projects implements AfterViewInit {
+  @ViewChild('animationContainer', { static: false }) animationContainer!: ElementRef;
+
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
+
+  async ngAfterViewInit() {
+    if (isPlatformBrowser(this.platformId) && this.animationContainer) {
+      const lottie = await import('lottie-web');
+      lottie.default.loadAnimation({
+        container: this.animationContainer.nativeElement,
+        renderer: 'svg',
+        loop: true,
+        autoplay: true,
+        path: 'assets/animations/projects-animation.json'
+      });
+    }
+  }
   projects = [
     {
       name: 'El Pollo Loco',

@@ -1,7 +1,12 @@
 <section class="projects" id="projects">
   <div class="projects-container">
-    <h2 class="projects-title">Meine Projekte</h2>
-    <p class="projects-subtitle">Eine Auswahl meiner Arbeiten</p>
+    <div class="projects-header">
+      <div class="projects-header-text">
+        <h2 class="projects-title">Meine Projekte</h2>
+        <p class="projects-subtitle">Eine Auswahl meiner Arbeiten - Von interaktiven Spielen bis hin zu modernen Web-Anwendungen</p>
+      </div>
+      <div class="projects-animation" #animationContainer></div>
+    </div>
     <div class="projects-grid">
       @for (project of projects; track project.name) {
         <div class="project-card">
