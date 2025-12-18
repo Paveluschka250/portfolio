@@ -1,1 +1,68 @@
-<p>contact works!</p>
+<section class="contact" id="contact">
+  <div class="contact-container">
+    <h2 class="contact-title">Kontakt</h2>
+    <p class="contact-subtitle">Hast du Fragen oder ein Projekt im Kopf? Lass uns reden!</p>
+    
+    <div class="contact-content">
+      <div class="contact-form-wrapper">
+        <form (ngSubmit)="onSubmit()" class="contact-form">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input 
+              type="text" 
+              id="name" 
+              name="name" 
+              [(ngModel)]="contactForm.name" 
+              required 
+              placeholder="Dein Name"
+            />
+          </div>
+          
+          <div class="form-group">
+            <label for="email">E-Mail</label>
+            <input 
+              type="email" 
+              id="email" 
+              name="email" 
+              [(ngModel)]="contactForm.email" 
+              required 
+              placeholder="deine.email@example.com"
+            />
+          </div>
+          
+          <div class="form-group">
+            <label for="message">Nachricht</label>
+            <textarea 
+              id="message" 
+              name="message" 
+              [(ngModel)]="contactForm.message" 
+              required 
+              rows="6"
+              placeholder="Deine Nachricht..."
+            ></textarea>
+          </div>
+          
+          <button type="submit" class="btn-submit">Nachricht senden</button>
+        </form>
+      </div>
+      
+      <div class="contact-info">
+        <h3>Oder kontaktiere mich direkt</h3>
+        <div class="social-links">
+          <a href="mailto:deine.email@example.com" class="social-link">
+            <span class="social-icon">📧</span>
+            <span>E-Mail</span>
+          </a>
+          <a href="https://github.com/dein-username" target="_blank" class="social-link">
+            <span class="social-icon">💻</span>
+            <span>GitHub</span>
+          </a>
+          <a href="https://linkedin.com/in/dein-profil" target="_blank" class="social-link">
+            <span class="social-icon">💼</span>
+            <span>LinkedIn</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
