@@ -2,11 +2,11 @@
   <nav class="nav">
     <div class="logo">Portfolio</div>
     <ul class="nav-links">
-      <li><a href="#home">Home</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#projects">Projekte</a></li>
-      <li><a href="#about">Über mich</a></li>
-      <li><a href="#contact">Kontakt</a></li>
+      <li><a (click)="scrollToSection('home'); $event.preventDefault()" href="#home">Home</a></li>
+      <li><a (click)="scrollToSection('skills'); $event.preventDefault()" href="#skills">Skills</a></li>
+      <li><a (click)="scrollToSection('projects'); $event.preventDefault()" href="#projects">Projekte</a></li>
+      <li><a (click)="scrollToSection('about'); $event.preventDefault()" href="#about">Über mich</a></li>
+      <li><a (click)="scrollToSection('contact'); $event.preventDefault()" href="#contact">Kontakt</a></li>
     </ul>
   </nav>
 </header>
