@@ -1,0 +1,36 @@
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Paul Gross</h3>
+        <p>Frontend Developer</p>
+        <p class="copyright">© 2024 Paul Gross. Alle Rechte vorbehalten.</p>
+      </div>
+      
+      <div class="footer-section">
+        <h4>Navigation</h4>
+        <ul class="footer-links">
+          <li><a (click)="scrollToSection('home'); $event.preventDefault()" href="#home">Home</a></li>
+          <li><a (click)="scrollToSection('skills'); $event.preventDefault()" href="#skills">Skills</a></li>
+          <li><a (click)="scrollToSection('projects'); $event.preventDefault()" href="#projects">Projekte</a></li>
+          <li><a (click)="scrollToSection('about'); $event.preventDefault()" href="#about">Über mich</a></li>
+          <li><a (click)="scrollToSection('contact'); $event.preventDefault()" href="#contact">Kontakt</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h4>Rechtliches</h4>
+        <ul class="footer-links">
+          <li><a href="/impressum">Impressum</a></li>
+          <li><a href="/datenschutz">Datenschutz</a></li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <button (click)="scrollToTop()" class="scroll-to-top" aria-label="Nach oben scrollen">
+        ↑
+      </button>
+    </div>
+  </div>
+</footer>
