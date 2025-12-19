@@ -1,6 +1,8 @@
 <header class="header">
   <nav class="nav">
-    <div class="logo">Portfolio</div>
+    <a (click)="scrollToSection('home'); $event.preventDefault()" href="#home" class="logo-link">
+      <img src="assets/images/logo.png" alt="Paul Gross Portfolio" class="logo" />
+    </a>
     <button class="hamburger" (click)="toggleMenu()" [class.active]="isMenuOpen" aria-label="Menü öffnen/schließen">
       <span></span>
       <span></span>
