@@ -94,10 +94,27 @@
   color: #333;
   font-weight: 500;
   transition: color 0.3s ease;
+  position: relative;
+  padding-bottom: 4px;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #007bff;
+  transition: width 0.3s ease;
 }
 
 .nav-links a:hover {
   color: #007bff;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
 }
 
 .overlay {
