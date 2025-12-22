@@ -6,6 +6,17 @@
   z-index: 1000;
 }
 
+.scroll-progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #007bff, #0056b3);
+  transition: width 0.1s ease;
+  z-index: 1001;
+  box-shadow: 0 2px 4px rgba(0, 123, 255, 0.3);
+}
+
 .nav {
   max-width: 1200px;
   margin: 0 auto;
