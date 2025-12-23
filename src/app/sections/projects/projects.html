@@ -14,7 +14,14 @@
             <img [src]="project.image" [alt]="project.name" />
           </div>
           <div class="project-info">
-            <h3 class="project-name">{{ project.name }}</h3>
+            <div class="project-header">
+              <h3 class="project-name">{{ project.name }}</h3>
+              @if (project.status) {
+                <span class="status-badge" [class.fertig]="project.status === 'fertig'" [class.in-bearbeitung]="project.status === 'in-bearbeitung'">
+                  {{ project.status === 'fertig' ? 'Fertig' : 'In Bearbeitung' }}
+                </span>
+              }
+            </div>
             <p class="project-description">{{ project.description }}</p>
             <div class="project-technologies">
               @for (tech of project.technologies; track tech) {

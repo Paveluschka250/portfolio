@@ -1,8 +1,40 @@
 <app-header [showNavigation]="false"></app-header>
 <div class="all-projects-page">
   <div class="all-projects-container">
-    <h1>Hier sind alle Projekte</h1>
-    <a routerLink="/" class="back-link">← Zurück zur Startseite</a>
+    <div class="all-projects-header">
+      <h1>Alle Projekte</h1>
+      <p class="subtitle">Eine Übersicht über alle meine Projekte - Von einfachen Landing Pages bis hin zu komplexen Angular-Anwendungen</p>
+      <a routerLink="/" class="back-link">← Zurück zur Startseite</a>
+    </div>
+    <div class="projects-grid">
+      @for (project of projects; track project.name) {
+        <div class="project-card">
+          <div class="project-image">
+            <img [src]="project.image" [alt]="project.name" />
+          </div>
+          <div class="project-info">
+            <div class="project-header">
+              <h3 class="project-name">{{ project.name }}</h3>
+              @if (project.status) {
+                <span class="status-badge" [class.fertig]="project.status === 'fertig'" [class.in-bearbeitung]="project.status === 'in-bearbeitung'">
+                  {{ project.status === 'fertig' ? 'Fertig' : 'In Bearbeitung' }}
+                </span>
+              }
+            </div>
+            <p class="project-description">{{ project.description }}</p>
+            <div class="project-technologies">
+              @for (tech of project.technologies; track tech) {
+                <span class="tech-badge">{{ tech }}</span>
+              }
+            </div>
+            <div class="project-buttons">
+              <a [href]="project.liveLink" target="_blank" class="btn btn-primary">Live Demo</a>
+              <a [href]="project.detailLink" class="btn btn-secondary">Mehr erfahren</a>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
   </div>
 </div>
 <app-footer></app-footer>
