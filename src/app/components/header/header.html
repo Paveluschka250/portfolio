@@ -1,20 +1,23 @@
 <header class="header">
+  <div class="scroll-progress" [style.width.%]="scrollProgress"></div>
   <nav class="nav">
-    <a (click)="scrollToSection('home'); $event.preventDefault()" href="#home" class="logo-link">
+    <a routerLink="/" class="logo-link">
       <img src="assets/images/logo.png" alt="Paul Gross Portfolio" class="logo" />
     </a>
-    <button class="hamburger" (click)="toggleMenu()" [class.active]="isMenuOpen" aria-label="Menü öffnen/schließen">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-    <ul class="nav-links" [class.open]="isMenuOpen">
-      <li><a (click)="scrollToSection('home'); $event.preventDefault()" href="#home">Home</a></li>
-      <li><a (click)="scrollToSection('skills'); $event.preventDefault()" href="#skills">Skills</a></li>
-      <li><a (click)="scrollToSection('projects'); $event.preventDefault()" href="#projects">Projekte</a></li>
-      <li><a (click)="scrollToSection('about'); $event.preventDefault()" href="#about">Über mich</a></li>
-      <li><a (click)="scrollToSection('contact'); $event.preventDefault()" href="#contact">Kontakt</a></li>
-    </ul>
-    <div class="overlay" [class.active]="isMenuOpen" (click)="closeMenu()"></div>
+    @if (showNavigation) {
+      <button class="hamburger" (click)="toggleMenu()" [class.active]="isMenuOpen" aria-label="Menü öffnen/schließen">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-links" [class.open]="isMenuOpen">
+        <li><a (click)="scrollToSection('home'); $event.preventDefault()" href="#home">Home</a></li>
+        <li><a (click)="scrollToSection('skills'); $event.preventDefault()" href="#skills">Skills</a></li>
+        <li><a (click)="scrollToSection('projects'); $event.preventDefault()" href="#projects">Projekte</a></li>
+        <li><a (click)="scrollToSection('about'); $event.preventDefault()" href="#about">Über mich</a></li>
+        <li><a (click)="scrollToSection('contact'); $event.preventDefault()" href="#contact">Kontakt</a></li>
+      </ul>
+      <div class="overlay" [class.active]="isMenuOpen" (click)="closeMenu()"></div>
+    }
   </nav>
 </header>

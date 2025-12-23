@@ -1,13 +1,15 @@
-import { Component, OnInit, OnDestroy, PLATFORM_ID, Inject, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit, OnDestroy, PLATFORM_ID, Inject, ChangeDetectorRef, Input } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-header',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './header.html',
   styleUrl: './header.scss',
 })
 export class Header implements OnInit, OnDestroy {
+  @Input() showNavigation: boolean = true;
   isMenuOpen = false;
   scrollProgress = 0;
   private scrollListener?: () => void;
