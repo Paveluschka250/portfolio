@@ -121,7 +121,7 @@ export class ProjectService {
         name: 'My Notes',
         description: 'Notizen App',
         technologies: ['HTML', 'CSS', 'JavaScript'],
-        image: 'assets/images/projects/my-notes.png',
+        image: 'assets/images/projects/my-notes-mockup.png',
         liveLink: 'https://paul-gross-dev.com/projects/my_notes/',
         detailLink: '/projects/my_notes',
         status: 'fertig'
